@@ -160,7 +160,7 @@ else{
   let price=await $$("//tr//td[3]//bdi");
   //price=price.getText();
  
-
+  let sum=0;
   for(let i=0;i<price.length;i++){
 
     let pr2=await price[i].getText()+"-->is the price of bulbs in list view ";
@@ -170,7 +170,15 @@ let pr3=pr2.substring(1);
 let pr4=pr3.replace(",","");
 console.log(pr3+"is the  text without rupee");
 console.log(pr4+"is the text without comma");
-console.log(parseInt(pr4)+"is the value after conversion");
+let pr5=parseInt(pr4);
+
+
+console.log(pr5+"  is the value after conversion");
+
+sum=sum+pr5;
+
+
+
 
   // const one=await price.filter(pr => pr.substring(1));
   // console.log(await price[i].slice(1)+"is the second item");
@@ -181,6 +189,7 @@ console.log(parseInt(pr4)+"is the value after conversion");
 
   
 }
+console.log(sum+"  is the total value");
 })
 /*
 it("replace comma with blank ",async ()=>{
