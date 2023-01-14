@@ -148,9 +148,9 @@ else{
      
 
   })
-    it("clear text and enter 2",async ()=>{
+    it("clear text and enter 4",async ()=>{
     await $('//tr[2]//td[4]//input').clearValue();
-    await $('//tr[2]//td[4]//input').setValue("2");
+    await $('//tr[2]//td[4]//input').setValue("4");
 })
   it("get row count and text of the price",async ()=>{
   let leng= await $$('//tr//td[@class="product-thumbnail"]');
@@ -176,32 +176,50 @@ let pr5=parseInt(pr4);
 console.log(pr5+"  is the value after conversion");
 
 sum=sum+pr5;
-
-
-
-
-  // const one=await price.filter(pr => pr.substring(1));
-  // console.log(await price[i].slice(1)+"is the second item");
-  
-
- //   price[i]=await price[i].getText().substring(1);
-
-
-  
 }
 console.log(sum+"  is the total value");
 })
-/*
-it("replace comma with blank ",async ()=>{
-  var strArray = browser.getHTML("//tr//td[3]//bdi");
-  for(var i=0;i<strArray.length;i++){
-    strArray[i]= strArray[i].replace(",","");
-    console.log(strArray[i]);
 
+it("Click on submit button",async ()=>{
+  await $('(//input[@type="submit"])[1]').click();
+  
+  })
+
+  it("get row count and text of the price",async ()=>{
+    let leng= await $$('//tr//td[@class="product-thumbnail"]');
+    let le=leng.length;
+    console.log(le+"is the length");
+    //tr//td[3]//bdi
+    let price=await $$("//tr//td[3]//bdi");
+    //price=price.getText();
+   
+    let sum=0;
+    for(let i=0;i<price.length;i++){
+  
+      let pr2=await price[i].getText()+"-->is the price of bulbs in list view ";
+     // console.log(await price[i].getText()+"-->is the price of bulbs in list view ");
+  console.log(pr2);
+  let pr3=pr2.substring(1);
+  let pr4=pr3.replace(",","");
+  console.log(pr3+"is the  text without rupee");
+  console.log(pr4+"is the text without comma");
+  let pr5=parseInt(pr4);
+  
+  
+  console.log(pr5+"  is the value after conversion");
+  
+  sum=sum+pr5;
   }
-  
-  
-})
-
-*/
+  console.log(sum+"  is the total value");
+  })
+ 
+  it("get price value ",async ()=>{
+    let price=await $('(//bdi)[last()]').getText();
+  console.log("the price is<<--->>"+price);
+    
+    })
+    it("get text of price",async ()=>{
+      await $('//tr/td//i').click();
+      
+      })
 });
