@@ -24,7 +24,7 @@ exports.config = {
     //
     specs: [
       // '*/firsttest.js',
-       '*/secondtest.js',
+       '*/thirdtest.js',
        //'*/rahulacademy.js',
     ],
     // Patterns to exclude.
@@ -145,7 +145,7 @@ exports.config = {
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
-        timeout: 60000
+        timeout: 360000
     },
     //
     // =====
