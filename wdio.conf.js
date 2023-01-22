@@ -24,7 +24,8 @@ exports.config = {
     //
     specs: [
       // '*/firsttest.js',
-       '*/thirdtest.js',
+      // '*/thirdtest.js',
+      '*/four.js',
        //'*/rahulacademy.js',
     ],
     // Patterns to exclude.
