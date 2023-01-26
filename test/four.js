@@ -52,8 +52,11 @@ console.log(na+"is first in list view");
                it("click on remove and validate the text",async ()=>{
                  await $(".remove").click();
                  let empty=await $(".list_empty").getText();
-                 console.log(empty+"  is after removing the text");
+                 const emptyon=await $(".list_empty");
+                await expect(emptyon).toHaveText('No products to compare');
+                 console.log(empty+"  -----is after removing the text");
                  await expect(browser).toHaveTitle('BATHROOM LIGHTS – kapoor Lampshades');
+                
                     
                        
                        
