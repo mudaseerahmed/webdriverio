@@ -53,6 +53,7 @@ console.log(na+"is first in list view");
                  await $(".remove").click();
                  let empty=await $(".list_empty").getText();
                  console.log(empty+"  is after removing the text");
+                 await expect(browser).toHaveTitle('BATHROOM LIGHTS – kapoor Lampshades');
                     
                        
                        
