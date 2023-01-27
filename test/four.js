@@ -61,4 +61,14 @@ console.log(na+"is first in list view");
                        
                        
                     })
+
+
+                    it("click on wishlist",async ()=>{
+                         await browser.scroll(0,-400);
+    await $('(//li//span[text()="Add to wishlist"])[2]').click();
+    await browser.scroll(0,-500);
+    await $('//a[text()="My Account"]').moveTo();
+    await $('(//a[text()="Wishlist"])[1]').click();
+      
+                           })
     });
